@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-	GameObject player; 
+    GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player"); 
-		// print(player.ToString()); //check players recognised
-		
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		transform.position = player.transform.position; //fix camera tranfrom to position of player
+	void LateUpdate () {
+        transform.position = player.transform.position;
 	}
 }
