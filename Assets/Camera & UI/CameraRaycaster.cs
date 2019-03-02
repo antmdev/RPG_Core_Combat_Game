@@ -30,7 +30,7 @@ public class CameraRaycaster : MonoBehaviour
         viewCamera = Camera.main;
     }
 
-    public void Update()
+    void Update()
     {
         // Look for and return priority layer hit
         foreach (Layer layer in layerPriorities)
@@ -41,8 +41,8 @@ public class CameraRaycaster : MonoBehaviour
                 raycastHit = hit.Value;
                 if (layerHit != layer) // if layer has changed
                 {
-                    layerHit = layer;
-                    onLayerChange(layer); // call the delegates
+                    layerHit = layer;    		// TODO causing a null refernce bug
+                    onLayerChange(layer); 	// call the delegates
                 }
                 layerHit = layer;
                 return;
